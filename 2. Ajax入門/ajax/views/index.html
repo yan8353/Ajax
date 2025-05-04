@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>首頁</h1>
+    <button>獲取資料</button>
+    <script>
+        document.querySelector("button").onclick = function(){
+          myajax("get","/data").then( res => {
+            alert(res);
+          });            
+        }
+
+        //同步與異步
+        //建議不使用回調函數處理異步問題
+        // function myajax(method,url,next){
+        //     let xhr = new XMLHttpRequest();
+        //     xhr.open("get","/data");
+        //     xhr.send();
+        //     xhr.onreadystatechange = function(){
+        //        if(xhr.readyState ===4 && xhr.status == 200){
+        //         next(xhr.responseText);
+        //     }
+        //   }
+        // }
+
+
+        //promise
+        function myajax(method,url){
+            return new Promise(function(resolve){
+                let xhr = new XMLHttpRequest();
+                xhr.open(method,url);
+                xhr.send();
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState ===4 && xhr.status == 200){
+                        resolve(xhr.responseText);
+                            }
+                }
+            })
+        }
+    </script>
+</body>
+</html>

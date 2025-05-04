@@ -1,0 +1,7 @@
+npm install axios  (因是前端的模組可不用--save)
+
+將axios.min.js複製到public資料夾
+
+這章使用koa-bodyparser
+
+

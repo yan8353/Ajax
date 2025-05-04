@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "axios": "^1.9.0",
+    "jquery": "^3.7.1",
+    "koa": "^3.0.0",
+    "koa-bodyparser": "^4.4.1",
+    "koa-router": "^13.0.1",
+    "koa-static": "^5.0.0",
+    "koa-views": "^8.1.0",
+    "nunjucks": "^3.2.4"
+  }
+}
